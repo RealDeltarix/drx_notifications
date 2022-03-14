@@ -11,5 +11,5 @@ Events:
 Example:
 > TriggerClientEvent('drx_notify:client', source, "Crazy title", "Some random text", "<i class='bx bx-palette'>")
 
-# Permanent Discord Invite: https://discord.gg/njBM5fVWcf (For support, and to get updates)
-# Youtube Channel: https://www.youtube.com/c/Deltarix
+Permanent Discord Invite: https://discord.gg/njBM5fVWcf (For support, and to get updates)
+Youtube Channel: https://www.youtube.com/c/Deltarix
