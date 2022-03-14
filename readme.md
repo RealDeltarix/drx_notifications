@@ -1,8 +1,3 @@
-# ------------------------CREDITS------------------------ #
-# --------        Script made by Deltarix        -------- #
-# --   Copyright 2021 Deltarix. All rights reserved    -- #
-# ------------------------------------------------------- #
-
 Installation:
 - Drag drx_notifications into your resource folder and start it in your configuration file.
 
