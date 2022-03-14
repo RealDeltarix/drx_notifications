@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <meta type="text/html" charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Deltarix Notifications</title>
+</head>
+
+<!-- https://boxicons.com/?query=color -->
+
+<body>
+    <v-app id='DRX_NOTIFICATIONS' v-show='ShowSets'>
+        <v-main>
+            <div id='container'>
+                <h3>DRX | Notification settings</h3>
+                <v-divider></v-divider>
+                <div class='wrap-top'>
+                    <div class='left'>
+                        <span><h4>Square</h4><vs-tooltip dark not-arrow><vs-checkbox v-model='drx_Square' value='drx_Square'></vs-checkbox><template #tooltip>If notification is square</template></vs-tooltip></span>
+                        <span><h4>Close</h4><vs-tooltip dark not-arrow><vs-checkbox v-model='drx_ButtonClose' value='drx_ButtonClose'></vs-checkbox><template #tooltip>If notification is closeable</template></vs-tooltip></span>
+                    </div>
+                    <div class='right'>
+                        <span><h4>Flat</h4><vs-tooltip dark not-arrow><vs-checkbox v-model='drx_Flat' value='drx_Flat'></vs-checkbox><template #tooltip>If notification is flat</template></vs-tooltip></span>
+                        <span><h4>Progress</h4><vs-tooltip dark not-arrow><vs-checkbox v-model='drx_Progress' value='drx_Progress'></vs-checkbox><template #tooltip>If notification shows duration progress</template></vs-tooltip></span>
+                    </div>
+                </div>
+                <v-divider></v-divider>
+                <div class='wrap-mid'>
+                    <div class='left'>
+                        <h4>Notification position</h4>
+                        <vs-select flat placeholder='Position' v-model='drx_Position'>
+                            <vs-option v-for='v in Positions' :key='v' :label='v' :value='v'>{{v}}</vs-option>
+                        </vs-select>
+                    </div>
+                    <div class='right'>
+                        <h4>Notification color</h4>
+                        <div class='special'>
+                            <vs-input v-model='drx_Color'></vs-input>
+                            <vs-tooltip dark not-arrow>
+                                <vs-button icon @click='notifyColorShow =! notifyColorShow'><i class='bx bx-palette'></i></vs-button><template #tooltip>Change notification color</template></vs-tooltip>
+                        </div>
+                    </div>
+                </div>
+
+                <v-divider></v-divider>
+                <div class='wrap-mid2'>
+                    <div class='top'>
+                        <h4>Enable border</h4>
+                        <vs-tooltip dark not-arrow>
+                            <vs-switch v-model='drx_Border' value='drx_Border'>{{notifyBorderText}}</vs-switch>
+                            <template #tooltip>If notification has a border</template>
+                        </vs-tooltip>
+                    </div>
+                    <v-scroll-y-transition>
+                        <div class='bottom' v-show='drx_Border'>
+                            <h4>Border color</h4>
+                            <div class='special'>
+                                <vs-input v-model='drx_BorderColor'></vs-input>
+                                <vs-tooltip dark not-arrow>
+                                    <vs-button icon @click='notifyBorderColorShow =! notifyBorderColorShow'><i class='bx bx-palette'></i></vs-button><template #tooltip>Change border color</template></vs-tooltip>
+                            </div>
+                        </div>
+                </div>
+                </v-scroll-y-transition>
+                <v-divider></v-divider>
+                <div class='wrap-mid3'>
+                    <h4>Notification duration</h4>
+                    <vs-input v-model='drx_Duration'></vs-input>
+                </div>
+                <v-divider></v-divider>
+
+                <vs-button class='test' gradient square primary @click='sendNotify("TEST", "NOTIFICATION")'>
+                    TEST NOTIFICATION
+                </vs-button>
+
+                <v-fade-transition>
+                    <div v-show='notifyColorShow'>
+                        <v-color-picker dark v-model='drx_Color' dot-size='10' show-swatches swatches-max-height='250'></v-color-picker>
+                    </div>
+                </v-fade-transition>
+
+                <v-fade-transition>
+                    <div v-show='notifyBorderColorShow'>
+                        <v-color-picker dark v-model='drx_BorderColor' dot-size='10' show-swatches swatches-max-height='250'></v-color-picker>
+                    </div>
+                </v-fade-transition>
+
+            </div>
+        </v-main>
+    </v-app>
+    <script src='nui://game/ui/jquery.js' type='text/javascript'></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>

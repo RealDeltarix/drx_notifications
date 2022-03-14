@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+:root {
+    --main-color: #2D3139;
+    --second-color: #1F2226;
+    --main-transparent: rgba(0, 0, 0, 0.2);
+    --dark-transparent: rgba(0, 0, 0, 0.6);
+    --offwhitey: #efefef;
+    --offwhite: #bfbfbf;
+    --red: #cc3e3e;
+    --green: #46af46;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+#DRX_NOTIFICATIONS {
+    background: var(--main-color);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    padding: 10px 15px;
+}
+
+#container {
+    position: relative;
+    height: 480;
+}
+
+.v-application--wrap {
+    display: block;
+    max-height: 480;
+    min-height: 480;
+    max-width: 100%;
+    position: relative;
+}
+
+#container .v-divider {
+    background: var(--offwhitey);
+    margin: 10px 0px 10px 0px;
+}
+
+#container h3 {
+    text-align: center;
+    color: var(--offwhitey);
+    font-weight: 100;
+}
+
+#container h4 {
+    color: var(--offwhitey);
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+#container .wrap-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+#container .wrap-top span {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container .wrap-top .left {
+    width: 50%;
+}
+
+#container .wrap-top .right {
+    width: 50%;
+}
+
+#container .wrap-mid {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#container .wrap-mid .left {
+    width: 50%;
+}
+
+#container .wrap-mid .right {
+    width: 50%;
+}
+
+#container .wrap-mid .special {
+    display: flex;
+}
+
+#container .wrap-mid .vs-input {
+    width: 115px;
+}
+
+#container .wrap-mid .vs-tooltip {
+    width: 20%;
+}
+
+#container .wrap-mid2 {}
+
+#container .wrap-mid2 .top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#container .wrap-mid2 .top .vs-switch {
+    width: 160px;
+}
+
+#container .wrap-mid2 .bottom {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#container .wrap-mid2 .special {
+    display: flex;
+}
+
+#container .wrap-mid2 .vs-input {
+    width: 115px;
+}
+
+#container .wrap-mid2 .vs-tooltip {
+    width: 20%;
+}
+
+#container .wrap-mid3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#container .wrap-mid3 .vs-input {
+    width: 160px;
+}
+
+.test {
+    position: absolute;
+    bottom: 0;
+    width: 360px;
+    letter-spacing: 2;
+}
+
+.v-color-picker {
+    z-index: 1;
+    position: absolute;
+    right: -320px;
+    top: -10;
+}
